@@ -76,7 +76,7 @@ def upload_csv():
                     continue
 
                 new_employee = Employee(
-                    first_name=row['First Name'],
+                    first_name=row_fffff['First Name'],
                     last_name=row.get('Last Name', ""),
                     sex=row['Sex'],
                     email=row['Email'],
@@ -94,8 +94,8 @@ def upload_csv():
         return jsonify({"message": "Data uploaded successfully."}), 200
     except Exception as e:
         db.session.rollback()
-        os.remove(file_path)
+        # os.remove(file_path)
         return jsonify({"error": str(e)}), 500
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
