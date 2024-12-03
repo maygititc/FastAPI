@@ -114,6 +114,6 @@ def upload_csv(file: UploadFile = File(...)):
         session.close()
 
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8009)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8009)
