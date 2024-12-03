@@ -1,10 +1,7 @@
 DATABASE_URL = "postgresql+psycopg2://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb"
 
-
 curl http://127.0.0.1:8000/employees
 curl -X POST -F "file=@people_data.csv" http://localhost:8000/upload_csv
-
-
 
 CREATE TABLE employeesmay (
     id SERIAL PRIMARY KEY,
