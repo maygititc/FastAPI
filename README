@@ -1,0 +1,20 @@
+DATABASE_URL = "postgresql+psycopg2://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb"
+
+
+curl http://127.0.0.1:8000/employees
+curl -X POST -F "file=@people_data.csv" http://localhost:8000/upload_csv
+
+
+
+CREATE TABLE employeesmay (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    sex VARCHAR(50) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    date_of_birth DATE NOT NULL,
+    job_title VARCHAR(255) NOT NULL
+);
+
+SELECT pg_get_serial_sequence('employeesmay', 'id');
+ALTER SEQUENCE public.employeesmay_id_seq RESTART WITH 1;
