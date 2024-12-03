@@ -15,3 +15,7 @@ CREATE TABLE employeesmay (
 
 SELECT pg_get_serial_sequence('employeesmay', 'id');
 ALTER SEQUENCE public.employeesmay_id_seq RESTART WITH 1;
+
+git add .
+git commit -m "commit 15"
+git push
