@@ -46,7 +46,7 @@ def read_employees():
             for emp in employees
         ]
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error fetching data: {e} ")
+        raise HTTPException(status_code=500, detail="Error fetching data:")
     finally:
         session.close()
 
