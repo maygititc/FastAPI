@@ -65,7 +65,7 @@ def upload_csv():
         # Ensure CSV contains the required columns
         required_columns = {'First Name', 'Last Name', 'Sex', 'Email', 'Date of birth', 'Job Title'}
         if not required_columns.issubset(data_df.columns):
-            return jsonify({"error": f"CSV must contain the following columns: {', '.join(required_columns)}"}), 400
+            return jsonify({"error": "CSV must contain the following columns:"}), 400
 
         # Parse and insert data
         for _, row in data_df.iterrows():
@@ -86,7 +86,7 @@ def upload_csv():
                 db.session.add(new_employee)
 
             except Exception as e:
-                print(f"Skipping row due to error: {e}")
+                print("Skipping row due to error: " + str(e))
 
         db.session.commit()
         os.remove(file_path)
