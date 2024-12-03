@@ -51,7 +51,7 @@ def read_employees():
         session.close()
 
 @app.post("/upload_csv")
-def upload_csv(file: UploadFile = File(...)):
+def upload_csv(UploadFile = File(...)):
     """Endpoint to upload a CSV file and insert data into the database."""
     session = SessionLocal()
     try:
