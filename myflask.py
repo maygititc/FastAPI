@@ -5,7 +5,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
-x
+
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
