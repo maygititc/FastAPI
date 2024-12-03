@@ -5,7 +5,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
-
+x
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -76,7 +76,7 @@ def upload_csv():
                     continue
 
                 new_employee = Employee(
-                    first_name=row_fffff['First Name'],
+                    first_name=row['First Name'],
                     last_name=row.get('Last Name', ""),
                     sex=row['Sex'],
                     email=row['Email'],
@@ -97,5 +97,5 @@ def upload_csv():
         # os.remove(file_path)
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000)
