@@ -8,7 +8,7 @@ import os
 app = FastAPI()
 
 # Database configuration
-DATABASE_URL = "postgresql+psycopg2://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb"
+DATABASE_URL = "postgresql+psycopg2://consultants:Welcome@18.132.73.0:5432/testdb"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
